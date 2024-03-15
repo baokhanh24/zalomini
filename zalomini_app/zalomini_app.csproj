@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB429C90-8BD3-417C-BDB3-E26C744A9C0D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zalomini_app</RootNamespace>
+    <AssemblyName>zalomini_app</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44369</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrators\add_answer.aspx" />
+    <Content Include="Administrators\add_dotthi.aspx" />
+    <Content Include="Administrators\add_voucher.aspx" />
+    <Content Include="Administrators\css\style.css" />
+    <Content Include="Administrators\detail_answer.aspx" />
+    <Content Include="Administrators\DSanswer.aspx" />
+    <Content Include="Administrators\DS_DotThi.aspx" />
+    <Content Include="Administrators\DS_Voucher.aspx" />
+    <Content Include="Administrators\Edit_answer.aspx" />
+    <Content Include="Administrators\edit_DotThi.aspx" />
+    <Content Include="Administrators\edit_Voucher.aspx" />
+    <Content Include="Administrators\home.aspx" />
+    <Content Include="Admin\add_answer.aspx" />
+    <Content Include="Admin\add_dotthi.aspx" />
+    <Content Include="Admin\Add_NguoiDung.aspx" />
+    <Content Include="Admin\add_voucher.aspx" />
+    <Content Include="Admin\css\style.css" />
+    <Content Include="Admin\DSanswer.aspx" />
+    <Content Include="Admin\DS_DotThi.aspx" />
+    <Content Include="Admin\DS_NguoiDung.aspx" />
+    <Content Include="Admin\DS_Voucher.aspx" />
+    <Content Include="Admin\edit_answer.aspx" />
+    <Content Include="Admin\edit_DotThi.aspx" />
+    <Content Include="Admin\Edit_NguoiDung.aspx" />
+    <Content Include="Admin\edit_Voucher.aspx" />
+    <Content Include="Admin\home.aspx" />
+    <Content Include="Admin\js\app.js" />
+    <Content Include="Admin\detail_answer.aspx" />
+    <Content Include="img\background.png" />
+    <Content Include="img\face-1.png" />
+    <Content Include="img\icons8-logout-50.png" />
+    <Content Include="img\Icon_of_Zalo.svg.png" />
+    <Content Include="img\zalo.png" />
+    <EmbeddedResource Include="Login\login.aspx" />
+    <Content Include="Login\Login.css" />
+    <Content Include="Login\register.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrators\add_answer.aspx.cs">
+      <DependentUpon>add_answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\add_answer.aspx.designer.cs">
+      <DependentUpon>add_answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\add_dotthi.aspx.cs">
+      <DependentUpon>add_dotthi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\add_dotthi.aspx.designer.cs">
+      <DependentUpon>add_dotthi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\add_voucher.aspx.cs">
+      <DependentUpon>add_voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\add_voucher.aspx.designer.cs">
+      <DependentUpon>add_voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\detail_answer.aspx.cs">
+      <DependentUpon>detail_answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\detail_answer.aspx.designer.cs">
+      <DependentUpon>detail_answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\DSanswer.aspx.cs">
+      <DependentUpon>DSanswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\DSanswer.aspx.designer.cs">
+      <DependentUpon>DSanswer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\DS_DotThi.aspx.cs">
+      <DependentUpon>DS_DotThi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\DS_DotThi.aspx.designer.cs">
+      <DependentUpon>DS_DotThi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\DS_Voucher.aspx.cs">
+      <DependentUpon>DS_Voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\DS_Voucher.aspx.designer.cs">
+      <DependentUpon>DS_Voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\Edit_answer.aspx.cs">
+      <DependentUpon>Edit_answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\Edit_answer.aspx.designer.cs">
+      <DependentUpon>Edit_answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\edit_DotThi.aspx.cs">
+      <DependentUpon>edit_DotThi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\edit_DotThi.aspx.designer.cs">
+      <DependentUpon>edit_DotThi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\edit_Voucher.aspx.cs">
+      <DependentUpon>edit_Voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\edit_Voucher.aspx.designer.cs">
+      <DependentUpon>edit_Voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrators\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrators\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_answer.aspx.cs">
+      <DependentUpon>add_answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_answer.aspx.designer.cs">
+      <DependentUpon>add_answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_dotthi.aspx.cs">
+      <DependentUpon>add_dotthi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_dotthi.aspx.designer.cs">
+      <DependentUpon>add_dotthi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Add_NguoiDung.aspx.cs">
+      <DependentUpon>Add_NguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Add_NguoiDung.aspx.designer.cs">
+      <DependentUpon>Add_NguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_voucher.aspx.cs">
+      <DependentUpon>add_voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_voucher.aspx.designer.cs">
+      <DependentUpon>add_voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DSanswer.aspx.cs">
+      <DependentUpon>DSanswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DSanswer.aspx.designer.cs">
+      <DependentUpon>DSanswer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DS_DotThi.aspx.cs">
+      <DependentUpon>DS_DotThi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DS_DotThi.aspx.designer.cs">
+      <DependentUpon>DS_DotThi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DS_NguoiDung.aspx.cs">
+      <DependentUpon>DS_NguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DS_NguoiDung.aspx.designer.cs">
+      <DependentUpon>DS_NguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DS_Voucher.aspx.cs">
+      <DependentUpon>DS_Voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DS_Voucher.aspx.designer.cs">
+      <DependentUpon>DS_Voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_answer.aspx.cs">
+      <DependentUpon>edit_answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_answer.aspx.designer.cs">
+      <DependentUpon>edit_answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_DotThi.aspx.cs">
+      <DependentUpon>edit_DotThi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_DotThi.aspx.designer.cs">
+      <DependentUpon>edit_DotThi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Edit_NguoiDung.aspx.cs">
+      <DependentUpon>Edit_NguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Edit_NguoiDung.aspx.designer.cs">
+      <DependentUpon>Edit_NguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_Voucher.aspx.cs">
+      <DependentUpon>edit_Voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_Voucher.aspx.designer.cs">
+      <DependentUpon>edit_Voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\detail_answer.aspx.cs">
+      <DependentUpon>detail_answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\detail_answer.aspx.designer.cs">
+      <DependentUpon>detail_answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LopDungChung.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Site1.Master" />
+    <Content Include="Administrators\Site1.Master" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60008</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44369/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

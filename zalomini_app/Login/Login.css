@@ -1,0 +1,73 @@
+﻿
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica,Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.login_container {
+}
+
+.logo {
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logozalo {
+    height: 100px;
+    margin-top: 50px;
+}
+
+.login-box {
+    display: flex;
+}
+
+.login_form {
+    margin: auto;
+}
+
+    .login_form input {
+        display: block;
+        margin-bottom: 15px;
+        height: 55px;
+        width: 550px;
+        outline: none;
+        border: none;
+        background-color: #F0F0F0;
+        padding: 10px 10px;
+        color: #020e17;
+        border-radius: 15px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+::placeholder {
+    color: #a0bcd1;
+    font-size: 16px;
+}
+
+.forgetpass {
+    display: flex;
+    justify-content: flex-end;
+    color: #005d9e;
+    margin-bottom: 14px;
+}
+
+input[value] {
+    font-size: 15px;
+    text-transform: uppercase;
+    height: 50px;
+    background-color: #008fe5;
+    color: #fff;
+}

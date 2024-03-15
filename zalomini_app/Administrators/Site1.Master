@@ -1,0 +1,200 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="zalomini_app.Administrators.Site1" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Menu</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/Style.css">
+
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .log-out {
+            cursor: pointer;
+        }
+
+        .admin-info h3 {
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .log-out {
+            
+            height: 40px;
+            min-width: 2.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="sidebar-top">
+            <span class="shrink-btn">
+                <i class='bx bx-chevron-left'></i>
+            </span>
+            <img src="../img/Icon_of_Zalo.svg.png" class="logo" alt="">
+            <h3 class="hide">ZALO</h3>
+        </div>
+
+        <div class="search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="hide" placeholder="Quick Search ...">
+        </div>
+
+        <div class="sidebar-links">
+            <ul>
+
+                <li class="tooltip-element" data-tooltip="0">
+                    <a href="#" class="nav-link  " data-active="0" data-href="home.aspx">
+                        <div class="icon">
+                            <i class='bx bx-tachometer'></i>
+                            <i class='bx bxs-tachometer'></i>
+                        </div>
+                        <span class="link hide">Trang Chủ </span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="1">
+                    <a href="#" class="nav-link" data-active="1" data-href="DSanswer.aspx">
+                        <div class="icon">
+                            <i class='bx bx-folder'></i>
+                            <i class='bx bxs-folder'></i>
+                        </div>
+                        <span class="link hide">Câu Hỏi</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="2">
+                    <a href="#" class="nav-link" data-active="2" data-href="DS_Voucher.aspx">
+                        <div class="icon">
+                            <i class='bx bx-message-square-detail'></i>
+                            <i class='bx bxs-message-square-detail'></i>
+                        </div>
+                        <span class="link hide">Mã Voucher</span>
+                    </a>
+                </li>
+                <li class="tooltip-element" data-tooltip="3">
+                    <a href="#" class="nav-link" data-active="3" data-href="DS_DotThi.aspx">
+                        <div class="icon">
+                            <i class='bx bx-bar-chart-square'></i>
+                            <i class='bx bxs-bar-chart-square'></i>
+                        </div>
+                        <span class="link hide">Đợt Thi</span>
+                    </a>
+                </li>
+                
+                <div class="tooltip">
+                    <span class="show">Trang Chủ</span>
+                    <span>Câu Hỏi</span>
+                    <span>Mã Thưởng</span>
+                    <span>Đợt Thi</span>
+                </div>
+            </ul>
+
+
+        </div>
+
+
+        <div class="sidebar-footer">
+            <a href="#" class="account tooltip-element" data-tooltip="0">
+                <i class='bx bx-user'></i>
+            </a>
+            <div class="admin-user tooltip-element" data-tooltip="1">
+                <div class="admin-profile hide">
+                    <img src="../img/face-1.png" alt="">
+                    <div class="admin-info">
+                        <h3><%= Session["HoTen"] %></h3>
+                        <h5>Quản Trị Viên</h5>
+                    </div>
+                </div>
+                <asp:HyperLink runat="server" ID="LogOutLink" CssClass="log-out" NavigateUrl="~/Login/login.aspx" OnClick="LogOut_Click">
+                        <i class='bx bx-log-out'></i>
+                </asp:HyperLink>
+            </div>
+            <div class="tooltip">
+                <span class="show"><%= Session["HoTen"] %></span>
+                <span>Logout</span>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </main>
+    <%--<script>
+        // Lấy danh sách tất cả các thẻ <a> trong menu
+        var menuItems = document.querySelectorAll(".sidebar-links a");
+
+        // Khởi tạo biến lưu trữ trạng thái hiện tại
+        var currentActiveIndex = localStorage.getItem("activeIndex");
+
+        // Lặp qua từng thẻ <a> và thêm sự kiện "click"
+        menuItems.forEach(function (item, index) {
+            item.addEventListener("click", function () {
+                // Xóa class "active" khỏi tất cả các thẻ <a>
+                menuItems.forEach(function (item) {
+                    item.classList.remove("active");
+                });
+                // Thêm class "active" vào thẻ <a> được click
+                this.classList.add("active");
+                // Thêm class "active-tab" vào thẻ <div>
+                var activeTab = document.querySelector(".active-tab");
+                if (activeTab) {
+                    activeTab.classList.remove("active-tab");
+                }
+                this.parentNode.classList.add("active-tab");
+                // Lưu trữ trạng thái hiện tại vào localStorage
+                localStorage.setItem("activeIndex", index);
+            });
+
+            // Nếu trạng thái hiện tại đã được lưu trữ, thiết lập class "active" và "active-tab" cho thẻ <a> và <div> tương ứng
+            if (currentActiveIndex === index.toString()) {
+                item.classList.add("active");
+                item.parentNode.classList.add("active-tab");
+            }
+        });
+
+        window.addEventListener("load", function () {
+            // Lấy trạng thái được lưu trữ từ localStorage
+            var currentActiveIndex = localStorage.getItem("activeIndex");
+
+            // Nếu có trạng thái được lưu trữ, thiết lập class "active" và "active-tab" cho thẻ <a> và <div> tương ứng
+            if (currentActiveIndex !== null) {
+                // Xóa class "active" và "active-tab" khỏi các thẻ ban đầu
+                menuItems.forEach(function (item) {
+                    item.classList.remove("active");
+                    item.parentNode.classList.remove("active-tab");
+                });
+
+                // Thiết lập class "active" và "active-tab" cho thẻ <a> và <div> tương ứng với trạng thái được lưu trữ
+                menuItems[currentActiveIndex].classList.add("active");
+                var activeTab = menuItems[currentActiveIndex].parentNode;
+                activeTab.classList.add("active-tab");
+            }
+        });
+    </script>--%>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Thêm sự kiện click cho tất cả các liên kết
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của trình duyệt
+                const href = link.dataset.href; // Lấy đường dẫn mới từ thuộc tính data-href
+                window.location.href = href; // Chuyển hướng trang
+            });
+        });
+    </script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+
+</html>
+
